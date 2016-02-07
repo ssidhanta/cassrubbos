@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/2/trunk/Servlets/customer
+END
+SubscriptionType.class
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2/trunk/Servlets/customer/SubscriptionType.class
+END
+LocalSubscriptionHome.class
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2/trunk/Servlets/customer/LocalSubscriptionHome.class
+END
+LocalSubscription.class
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/Servlets/customer/LocalSubscription.class
+END
+LocalCustomerHome.class
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/Servlets/customer/LocalCustomerHome.class
+END
+LocalAddressHome.class
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2/trunk/Servlets/customer/LocalAddressHome.class
+END
+LocalCustomer.class
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/Servlets/customer/LocalCustomer.class
+END
+LocalAddress.class
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/Servlets/customer/LocalAddress.class
+END
+SubscriptionBean.class
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2/trunk/Servlets/customer/SubscriptionBean.class
+END
+CustomerBean.class
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/Servlets/customer/CustomerBean.class
+END
+AddressBean.class
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/Servlets/customer/AddressBean.class
+END

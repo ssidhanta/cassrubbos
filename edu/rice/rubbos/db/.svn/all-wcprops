@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/30/trunk/Servlets/edu/rice/rubbos/db
+END
+DbProcessResult.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/3/trunk/Servlets/edu/rice/rubbos/db/DbProcessResult.java
+END
+CassandraDb.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/22/trunk/Servlets/edu/rice/rubbos/db/CassandraDb.java
+END
+DatabaseClientInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/22/trunk/Servlets/edu/rice/rubbos/db/DatabaseClientInterface.java
+END
+MongoDb.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/30/trunk/Servlets/edu/rice/rubbos/db/MongoDb.java
+END

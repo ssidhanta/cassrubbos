@@ -1,0 +1,151 @@
+/**
+ * RUBBoS: Rice University Bulletin Board System.
+ * Copyright (C) 2001-2004 Rice University and French National Institute For 
+ * Research In Computer Science And Control (INRIA).
+ * Contact: jmob@objectweb.org
+ * 
+ * This library is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published by the
+ * Free Software Foundation; either version 2.1 of the License, or any later
+ * version.
+ * 
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
+ * for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this library; if not, write to the Free Software Foundation,
+ * Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
+ *
+ * Initial developer(s): Emmanuel Cecchet.
+ * Contributor(s): Niraj Tolia.
+ */
+
+package edu.rice.rubbos.servlets;
+
+import java.io.IOException;
+import java.net.URLEncoder;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.yahoo.ycsb.JMXClient;
+
+import edu.rice.rubbos.db.CassandraDb;
+import edu.rice.rubbos.db.DatabaseClientInterface;
+import edu.rice.rubbos.db.DbProcessResult;
+
+import java.util.List;
+import java.util.Date;
+
+import me.prettyprint.cassandra.model.CqlQuery;
+import me.prettyprint.cassandra.model.CqlRows;
+import me.prettyprint.cassandra.serializers.BytesArraySerializer;
+import me.prettyprint.cassandra.serializers.LongSerializer;
+import me.prettyprint.cassandra.serializers.StringSerializer;
+import me.prettyprint.hector.api.Cluster;
+import me.prettyprint.hector.api.Keyspace;
+import me.prettyprint.hector.api.beans.OrderedRows;
+import me.prettyprint.hector.api.beans.Row;
+import me.prettyprint.hector.api.factory.HFactory;
+import me.prettyprint.hector.api.query.QueryResult;
+import me.prettyprint.hector.api.query.SliceQuery;
+import me.prettyprint.hector.api.query.RangeSlicesQuery;
+import me.prettyprint.hector.api.beans.*;
+
+
+public class BrowseStoriesByCategory extends RubbosHttpServlet
+{
+
+ /* public int getPoolSize()
+  {
+    return Config.BrowseCategoriesPoolSize;
+  }*/ 
+
+  /** Build the html page for the response */
+  public void doGet(HttpServletRequest request, HttpServletResponse response)
+      throws IOException, ServletException
+  {
+	  super.doGet(request, response);
+	  long start_time = System.nanoTime();
+    ServletPrinter    sp   = null;      
+	
+    sp = new ServletPrinter(response, "BrowseStoriesByCategory");
+
+    String categoryName, username, categoryId, testpage, testnbOfStories;
+    int page = 0, nbOfStories = 0;
+    ResultSet rs = null;
+
+    testpage = request.getParameter("page");
+    testnbOfStories = request.getParameter("nbOfStories");
+
+    if (testpage != null)
+    {
+      page = (Integer.valueOf(request.getParameter("page"))).intValue();
+    }
+
+    if (testnbOfStories != null)
+    {
+      nbOfStories = (Integer.valueOf(request.getParameter("nbOfStories")))
+          .intValue();
+    }
+
+    categoryId = request.getParameter("category");
+    categoryName = request.getParameter("categoryName");
+
+ 
+    if (categoryName == null)
+    {
+      sp.printHTML("Browse Stories By Category"
+          + "You must provide a category name!<br>");
+      return;
+    }
+
+    if (categoryId == null)
+    {
+      sp.printHTML("Browse Stories By Category"
+          + "You must provide a category identifier!<br>");
+      return;
+    }
+
+    if (page == 0)
+    {
+      page = 0;
+    }
+
+    if (nbOfStories == 0)
+    {
+      nbOfStories = 25;
+
+    }
+    sp.printHTMLheader("RUBBoS Browse Stories By Category");
+    sp.printHTML("<br><h2>Stories in category " + categoryName + "</h2><br>");
+
+    
+	DbProcessResult result = dbClient.getBrowseStoriesByCategoryResult( sp,  
+			 nbOfStories, page, categoryId,  categoryName);
+
+    sp=result.sp;
+    long end_time = System.nanoTime();
+	  double difference = (end_time - start_time)/1e6;
+	  JMXClient.cassandraJMX("read",difference);
+    if(result.exceptionOccured){
+    	return;
+    }
+    sp.printHTMLfooter();
+    
+	  System.out.println("********in browse soiries by categories:---");//load
+  }
+
+  public void doPost(HttpServletRequest request, HttpServletResponse response)
+      throws IOException, ServletException
+  {
+    doGet(request, response);
+  }
+
+}

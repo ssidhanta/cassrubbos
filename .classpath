@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/catalina.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/catalina-ant.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/annotations-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/ejb10deployment.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/j2ee-ri-svc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/cloudscape.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/mongo-2.9.1 (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/joda-time-2.1 (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/mongo-2.9.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/j2ee.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/hector-core-0.8.0-3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/rubbos_servlets.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Dropbox/Consistency/weka.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Dropbox/CodeBase Log ingestion/HectorClient.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/lib/apache-cassandra-1.1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/lib/cassandra-jdbc-1.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/lib/cassandra-thrift-1.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/lib/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/lib/j2eetools.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/lib/jhall.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/lib/joda-time-2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/lib/libthrift-0.9.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/lib/logback-classic-1.0.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/lib/logback-core-1.0.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ssidha1/Downloads/lib/servlet-api.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
